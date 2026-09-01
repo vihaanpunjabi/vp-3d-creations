@@ -77,7 +77,18 @@ Two tiles need the `src` changed in **two** places — the `<img src>` and the
 
 ---
 
-## 4. Deploy free — GitHub Pages
+## 4. Deploy free — Netlify drag-and-drop (fastest, no install)
+
+1. Go to <https://app.netlify.com/drop>
+2. Drag the whole `print-lab-site` folder onto the page.
+3. It's live in ~20 seconds at `random-name.netlify.app`.
+
+Rename it under **Site settings → Change site name**. To update later, drag the
+folder again (or connect the GitHub repo for auto-deploy on push).
+
+---
+
+## 5. Deploy free — GitHub Pages
 
 ```bash
 git init
@@ -106,7 +117,7 @@ Live at `https://USERNAME.github.io/print-lab-site/` in about a minute. Every
 
 ---
 
-## 5. Deploy free — Netlify (alternative)
+## 6. Deploy free — Netlify via CLI (alternative)
 
 ```bash
 npm install -g netlify-cli
@@ -124,7 +135,7 @@ if the code already lives on GitHub. Either is free and both include HTTPS.
 
 ---
 
-## 6. Custom domain (optional, ~$10/yr)
+## 7. Custom domain (optional, ~$10/yr)
 
 - **GitHub Pages:** add a `CNAME` file containing `yourdomain.com`, then point an
   `ALIAS`/`ANAME` record at `USERNAME.github.io` in your registrar's DNS.
@@ -132,6 +143,18 @@ if the code already lives on GitHub. Either is free and both include HTTPS.
   its DNS instructions.
 
 HTTPS is issued automatically on both.
+
+---
+
+## Social preview (do this after deploying)
+
+`index.html` has three tags containing `REPLACE_WITH_ABSOLUTE_URL`. Link previews
+in iMessage, Slack, and Discord need **absolute** URLs, so once you know your live
+address, run:
+
+```bash
+sed -i '' 's|REPLACE_WITH_ABSOLUTE_URL|https://yoursite.netlify.app|g' index.html
+```
 
 ---
 
