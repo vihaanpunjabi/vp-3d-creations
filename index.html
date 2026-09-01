@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRINTLAB — Precision 3D Printing | Santa Clara, CA</title>
+<meta name="description" content="Precision 3D printing studio in Santa Clara, CA. Multi-color art prints, robotics and engineering components, and custom 3D models. From CAD file to finished part.">
+<meta name="theme-color" content="#07090d">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="PRINTLAB — Precision 3D Printing">
+<meta property="og:description" content="CAD and digital art, turned into physical reality. Santa Clara, CA.">
+<meta property="og:image" content="assets/img/hero.svg">
+
+<!-- Inline SVG favicon: no extra file, no 404 -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2307090d'/><path d='M16 6 L26 12 L26 20 L16 26 L6 20 L6 12 Z' fill='none' stroke='%2300d4ff' stroke-width='2.2' stroke-linejoin='round'/><path d='M16 14 L21 17 L16 20 L11 17 Z' fill='%23ff6a1f'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.slide{flex:0 0 100%}.carousel-controls{display:none}</style></noscript>
+</head>
+<body>
+
+<!-- ============ SKIP LINK ============ -->
+<a class="skip-link" href="#hero">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="#hero" class="brand" aria-label="PRINTLAB home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 4 L27 10.5 L27 21.5 L16 28 L5 21.5 L5 10.5 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M16 13 L21.5 16.2 L16 19.5 L10.5 16.2 Z" fill="var(--orange)"/>
+      </svg>
+      <span class="brand-text">PRINT<span class="brand-accent">LAB</span></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services" class="nav-link">Specialties</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-media" aria-hidden="true">
+    <!-- REPLACE: swap src for your own photo of a printer mid-print (e.g. assets/img/hero.jpg) -->
+    <img src="assets/img/hero.svg" alt="" class="hero-img">
+    <div class="hero-scrim"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="container hero-inner">
+    <p class="eyebrow reveal">
+      <span class="pulse-dot"></span>
+      Santa Clara, CA &middot; Accepting new builds
+    </p>
+
+    <h1 class="hero-title reveal" data-delay="1">
+      From <span class="grad-text">CAD file</span><br>
+      to finished part.
+    </h1>
+
+    <p class="hero-sub reveal" data-delay="2">
+      I'm a maker and robotics engineer running a precision FDM &amp; multi&#8209;color
+      print studio out of Silicon Valley. Send me a model, a sketch, or a napkin
+      idea &mdash; I turn digital geometry and artwork into a physical object you can hold.
+    </p>
+
+    <div class="hero-actions reveal" data-delay="3">
+      <a href="#contact" class="btn btn-primary btn-lg">
+        Get a Quote
+        <svg viewBox="0 0 24 24" class="btn-icon" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#work" class="btn btn-ghost btn-lg">See the work</a>
+    </div>
+
+    <dl class="hero-stats reveal" data-delay="4">
+      <div class="stat"><dt>Layer resolution</dt><dd><span class="count" data-count="0.06" data-decimals="2">0.06</span><span class="unit">mm</span></dd></div>
+      <div class="stat"><dt>Build volume</dt><dd>256<span class="unit">³ mm</span></dd></div>
+      <div class="stat"><dt>Typical turnaround</dt><dd><span class="count" data-count="48">48</span><span class="unit">hrs</span></dd></div>
+      <div class="stat"><dt>Prints delivered</dt><dd><span class="count" data-count="340">340</span><span class="unit">+</span></dd></div>
+    </dl>
+  </div>
+
+  <a href="#services" class="scroll-cue" aria-label="Scroll to specialties">
+    <span class="scroll-cue-line"></span>
+  </a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PLA</span><i>◆</i><span>PETG</span><i>◆</i><span>ABS</span><i>◆</i><span>TPU</span><i>◆</i><span>ASA</span><i>◆</i>
+    <span>CARBON FIBER NYLON</span><i>◆</i><span>MULTI-COLOR AMS</span><i>◆</i><span>RAPID PROTOTYPING</span><i>◆</i>
+    <span>PLA</span><i>◆</i><span>PETG</span><i>◆</i><span>ABS</span><i>◆</i><span>TPU</span><i>◆</i><span>ASA</span><i>◆</i>
+    <span>CARBON FIBER NYLON</span><i>◆</i><span>MULTI-COLOR AMS</span><i>◆</i><span>RAPID PROTOTYPING</span><i>◆</i>
+  </div>
+</div>
+
+<!-- ============ SPECIALTIES ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="section-label">01 &mdash; Services</p>
+      <h2 class="section-title">My specialties</h2>
+      <p class="section-sub">
+        Three things I do better than a print farm: artwork that holds detail,
+        parts that hold tolerance, and models that hold up on a shelf.
+      </p>
+    </header>
+
+    <div class="service-grid">
+
+      <!-- Service 1 -->
+      <article class="card service-card reveal" data-delay="1">
+        <div class="card-media">
+          <!-- REPLACE: assets/img/service-art.jpg -->
+          <img src="assets/img/service-art.svg" alt="Multi-color 3D printed album cover artwork" loading="lazy">
+          <span class="card-tag">Art</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Album Covers &amp; Art</h3>
+          <p class="card-text">
+            High-resolution wall pieces printed in true multi-color or layered
+            texture. Album art, posters, logos, and generative geometry rendered
+            at 0.08&nbsp;mm so the detail survives the jump from screen to shelf.
+          </p>
+          <ul class="feature-list">
+            <li>Up to 4-color AMS blending</li>
+            <li>Texture &amp; relief mapping from any image</li>
+            <li>Frame-ready sizes up to 250&nbsp;mm</li>
+          </ul>
+          <div class="card-foot">
+            <p class="price"><span class="price-label">Starting at</span><span class="price-value">$XX.XX</span></p>
+            <button class="btn btn-outline btn-sm js-request" data-service="art">Request this</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="card service-card is-featured reveal" data-delay="2">
+        <div class="card-media">
+          <!-- REPLACE: assets/img/service-robotics.jpg -->
+          <img src="assets/img/service-robotics.svg" alt="Precision 3D printed robotics bracket and chassis components" loading="lazy">
+          <span class="card-tag card-tag-orange">Most requested</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Robotics &amp; Engineering</h3>
+          <p class="card-text">
+            Functional parts built to a drawing, not a vibe. Custom motor mounts,
+            sensor brackets, gearboxes, and chassis panels in engineering-grade
+            filament &mdash; dimensionally checked with calipers before they ship.
+          </p>
+          <ul class="feature-list">
+            <li>&plusmn;0.15&nbsp;mm dimensional accuracy</li>
+            <li>PETG / ASA / CF-Nylon for load-bearing parts</li>
+            <li>Same-week rapid prototyping revisions</li>
+          </ul>
+          <div class="card-foot">
+            <p class="price"><span class="price-label">Starting at</span><span class="price-value">$XX.XX</span></p>
+            <button class="btn btn-outline btn-sm js-request" data-service="robotics">Request this</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="card service-card reveal" data-delay="3">
+        <div class="card-media">
+          <!-- REPLACE: assets/img/service-models.jpg -->
+          <img src="assets/img/service-models.svg" alt="Custom 3D printed figurines and architectural models" loading="lazy">
+          <span class="card-tag">Models</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">3D Models</h3>
+          <p class="card-text">
+            Figurines, tabletop terrain, architectural massing models, and display
+            pieces. Printed with fine layer heights and cleaned up by hand, with
+            optional priming and paint prep so they arrive display-ready.
+          </p>
+          <ul class="feature-list">
+            <li>0.06&nbsp;mm detail layers on miniatures</li>
+            <li>Scaled architectural &amp; terrain models</li>
+            <li>Support removal &amp; finishing included</li>
+          </ul>
+          <div class="card-foot">
+            <p class="price"><span class="price-label">Starting at</span><span class="price-value">$XX.XX</span></p>
+            <button class="btn btn-outline btn-sm js-request" data-service="models">Request this</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="section section-alt" id="work">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="section-label">02 &mdash; Portfolio</p>
+      <h2 class="section-title">Selected builds</h2>
+      <p class="section-sub">Six recent prints off the plate. Click any tile for the build notes.</p>
+    </header>
+
+    <div class="filters reveal" role="tablist" aria-label="Filter projects">
+      <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter" data-filter="art" role="tab" aria-selected="false">Art</button>
+      <button class="filter" data-filter="robotics" role="tab" aria-selected="false">Robotics</button>
+      <button class="filter" data-filter="models" role="tab" aria-selected="false">Models</button>
+    </div>
+
+    <div class="gallery" id="gallery">
+
+      <button class="tile tile-feature reveal" data-cat="art"
+              data-title="Album Cover Relief — 4 Color"
+              data-meta="PLA · 0.08 mm · 14 hr · 4-color AMS"
+              data-desc="A 220 mm album cover reproduced as a layered color relief. Each color transition is a discrete Z-height, so the artwork reads correctly from any angle instead of washing out."
+              data-img="assets/img/work-1.svg">
+        <!-- REPLACE: assets/img/work-1.jpg -->
+        <img src="assets/img/work-1.svg" alt="Multi-color 3D printed album cover relief" loading="lazy">
+        <span class="tile-overlay">
+          <span class="tile-cat">Art</span>
+          <span class="tile-title">Album Cover Relief</span>
+          <span class="tile-meta">PLA · 4-color AMS · 14 hr</span>
+        </span>
+      </button>
+
+      <button class="tile reveal" data-delay="1" data-cat="robotics"
+              data-title="FTC Drivetrain Bracket"
+              data-meta="CF-Nylon · 0.16 mm · 6 hr · 60% gyroid"
+              data-desc="Load-bearing motor mount for a competition drivetrain. Printed in carbon-fiber nylon with the layer lines oriented across the shear plane, then caliper-checked against the CAD drawing before delivery."
+              data-img="assets/img/work-2.svg">
+        <img src="assets/img/work-2.svg" alt="Carbon fiber nylon robotics drivetrain bracket" loading="lazy">
+        <span class="tile-overlay">
+          <span class="tile-cat">Robotics</span>
+          <span class="tile-title">Drivetrain Bracket</span>
+          <span class="tile-meta">CF-Nylon · 6 hr</span>
+        </span>
+      </button>
+
+      <button class="tile reveal" data-delay="2" data-cat="models"
+              data-title="Tabletop Terrain Set"
+              data-meta="PLA · 0.06 mm · 22 hr · 12 pieces"
+              data-desc="A twelve-piece modular terrain set printed at fine detail layers. Supports removed by hand and surfaces scuffed for primer so the set takes paint straight out of the box."
+              data-img="assets/img/work-3.svg">
+        <img src="assets/img/work-3.svg" alt="Detailed 3D printed tabletop terrain pieces" loading="lazy">
+        <span class="tile-overlay">
+          <span class="tile-cat">Models</span>
+          <span class="tile-title">Tabletop Terrain Set</span>
+          <span class="tile-meta">PLA · 0.06 mm · 22 hr</span>
+        </span>
+      </button>
+
+      <button class="tile reveal" data-cat="robotics"
+              data-title="Sensor Mount Array"
+              data-meta="PETG · 0.16 mm · 4 hr · 3 revisions"
+              data-desc="An adjustable LiDAR and camera mount that went through three revisions in five days. Rapid prototyping loop: print, fit-check on the chassis, tweak the CAD, reprint overnight."
+              data-img="assets/img/work-4.svg">
+        <img src="assets/img/work-4.svg" alt="PETG sensor mount array for robotics" loading="lazy">
+        <span class="tile-overlay">
+          <span class="tile-cat">Robotics</span>
+          <span class="tile-title">Sensor Mount Array</span>
+          <span class="tile-meta">PETG · 3 revisions in 5 days</span>
+        </span>
+      </button>
+
+      <button class="tile reveal" data-delay="1" data-cat="art"
+              data-title="Topographic Wall Panel"
+              data-meta="PLA · 0.08 mm · 18 hr · dual-tone"
+              data-desc="Elevation data converted into a dual-tone contour panel. The height map drives real Z geometry, so the piece casts genuine shadows that shift with the light through the day."
+              data-img="assets/img/work-5.svg">
+        <img src="assets/img/work-5.svg" alt="Topographic 3D printed wall art panel" loading="lazy">
+        <span class="tile-overlay">
+          <span class="tile-cat">Art</span>
+          <span class="tile-title">Topographic Wall Panel</span>
+          <span class="tile-meta">Dual-tone · 18 hr</span>
+        </span>
+      </button>
+
+      <button class="tile reveal" data-delay="2" data-cat="models"
+              data-title="Architectural Massing Model"
+              data-meta="PLA + resin detail · 0.10 mm · 31 hr"
+              data-desc="A 1:150 scale massing model for a client review. Printed in sections with hidden alignment keys, seam-sanded, and finished in a matte neutral so the form reads cleanly under presentation lighting."
+              data-img="assets/img/work-6.svg">
+        <img src="assets/img/work-6.svg" alt="Architectural scale massing model, 3D printed" loading="lazy">
+        <span class="tile-overlay">
+          <span class="tile-cat">Models</span>
+          <span class="tile-title">Architectural Massing Model</span>
+          <span class="tile-meta">1:150 scale · 31 hr</span>
+        </span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="section-label">03 &mdash; Reviews</p>
+      <h2 class="section-title">What clients say</h2>
+      <p class="section-sub">A few notes from recent builds.</p>
+    </header>
+
+    <div class="carousel reveal" id="carousel">
+      <div class="carousel-viewport">
+        <ul class="carousel-track" id="carousel-track">
+
+          <li class="slide">
+            <blockquote class="quote">
+              <div class="stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+              </div>
+              <p>&ldquo;The print quality is genuinely a step above what I was getting elsewhere &mdash; no layer shifting, no stringing, and the color transitions on the album piece are razor sharp. It looks like a manufactured product, not a hobby print.&rdquo;</p>
+              <footer class="quote-foot">
+                <span class="avatar" aria-hidden="true">PLACEHOLDER</span>
+                <span class="quote-who"><strong>Client Name</strong><span>Project Type &middot; City, CA</span></span>
+              </footer>
+            </blockquote>
+          </li>
+
+          <li class="slide">
+            <blockquote class="quote">
+              <div class="stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+              </div>
+              <p>&ldquo;Turnaround was the whole reason I reached out, and it delivered. I sent the STL Monday night and had parts in hand Wednesday. The brackets dropped straight onto the chassis with zero filing.&rdquo;</p>
+              <footer class="quote-foot">
+                <span class="avatar" aria-hidden="true">PLACEHOLDER</span>
+                <span class="quote-who"><strong>Client Name</strong><span>Project Type &middot; City, CA</span></span>
+              </footer>
+            </blockquote>
+          </li>
+
+          <li class="slide">
+            <blockquote class="quote">
+              <div class="stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6.6 7 .9-5.1 4.8 1.3 7L12 18l-6.2 3.3 1.3-7L2 9.5l7-.9z"/></svg>
+              </div>
+              <p>&ldquo;Communication was the best part. I got a message confirming the orientation and material choice before anything went on the plate, plus photos mid-print. I never had to wonder where my order was.&rdquo;</p>
+              <footer class="quote-foot">
+                <span class="avatar" aria-hidden="true">PLACEHOLDER</span>
+                <span class="quote-who"><strong>Client Name</strong><span>Project Type &middot; City, CA</span></span>
+              </footer>
+            </blockquote>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prev-slide" aria-label="Previous review">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dots" id="dots" role="tablist" aria-label="Choose review"></div>
+        <button class="carousel-btn" id="next-slide" aria-label="Next review">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-intro reveal">
+        <p class="section-label">04 &mdash; Custom orders</p>
+        <h2 class="section-title">Start a print</h2>
+        <p class="section-sub">
+          Tell me what you're making. Include a link to your STL / STEP / 3MF if you
+          have one &mdash; or just describe the idea and I'll help you get to a printable file.
+          I reply to every request, usually within a day.
+        </p>
+
+        <ul class="contact-points">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Free quotes.</strong> No charge to price a job or sanity-check a model.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Local pickup</strong> in the Santa Clara / South Bay area, or shipped nationwide.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>No file? No problem.</strong> I can model it from sketches or reference photos.</span>
+          </li>
+        </ul>
+
+        <div class="contact-meta">
+          <p><span class="meta-label">Email</span><a href="mailto:INSERT_YOUR_EMAIL_HERE">INSERT_YOUR_EMAIL_HERE</a></p>
+          <p><span class="meta-label">Based in</span>Santa Clara, California</p>
+        </div>
+      </div>
+
+      <!-- Web3Forms: no backend needed. Submissions are emailed to the address
+           tied to your access key. See README.md → "Wire up the contact form". -->
+      <form class="form reveal" id="quote-form" data-delay="1"
+            action="https://api.web3forms.com/submit" method="POST">
+
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New print request from printlab site">
+        <input type="hidden" name="from_name" value="PRINTLAB Website">
+        <!-- Honeypot: bots fill this, humans never see it -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ada Lovelace">
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@domain.com">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="service">Service <span class="req">*</span></label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Choose one…</option>
+              <option value="Album Covers &amp; Art">Album Covers &amp; Art</option>
+              <option value="Robotics &amp; Engineering">Robotics &amp; Engineering</option>
+              <option value="3D Models">3D Models</option>
+              <option value="Something else">Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="material">Preferred material</label>
+            <select id="material" name="material">
+              <option value="Not sure — recommend one" selected>Not sure — recommend one</option>
+              <option value="PLA">PLA (general / art)</option>
+              <option value="PETG">PETG (tough, outdoor)</option>
+              <option value="ABS / ASA">ABS / ASA (heat resistant)</option>
+              <option value="TPU">TPU (flexible)</option>
+              <option value="CF-Nylon">CF-Nylon (structural)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="file_link">Link to your model <span class="hint">(Drive, Dropbox, Printables&hellip;)</span></label>
+          <input type="url" id="file_link" name="file_link" placeholder="https://…">
+        </div>
+
+        <div class="field">
+          <label for="message">Project details <span class="req">*</span></label>
+          <textarea id="message" name="message" rows="5" required
+            placeholder="Dimensions, quantity, deadline, color, and what the part needs to do."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit-btn">
+          <span class="btn-label">Send request</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-fine">Your details go straight to my inbox. No list, no spam, no resale.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">PRINT<span class="brand-accent">LAB</span></span>
+      <p>Precision 3D printing &mdash; Santa Clara, CA</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#services">Specialties</a>
+      <a href="#work">Work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="copyright">&copy; <span id="year">2026</span> PRINTLAB. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+  <div class="lightbox-backdrop" data-close></div>
+  <div class="lightbox-panel" role="document">
+    <button class="lightbox-close" id="lb-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <img id="lb-img" src="" alt="">
+    <div class="lightbox-body">
+      <h3 id="lb-title"></h3>
+      <p class="lightbox-meta" id="lb-meta"></p>
+      <p id="lb-desc"></p>
+      <a href="#contact" class="btn btn-primary btn-sm" data-close>Request something like this</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
