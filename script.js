@@ -273,8 +273,7 @@
      --------------------------------------------------------------- */
   var SERVICE_MAP = {
     art:      'Album Covers & Art',
-    robotics: 'Robotics & Engineering',
-    models:   '3D Models'
+    robotics: 'Robotics & Engineering'
   };
 
   $$('.js-request').forEach(function (btn) {
