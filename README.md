@@ -17,10 +17,10 @@ print-lab-site/
 ## 1. Run it locally
 
 ```bash
-python3 -m http.server 4173
+python3 -m http.server 4321
 ```
 
-Then open <http://localhost:4173>. (Opening `index.html` by double-clicking works
+Then open <http://localhost:4321>. (Opening `index.html` by double-clicking works
 too, but the contact form's `fetch` behaves better over `http://`.)
 
 ---
