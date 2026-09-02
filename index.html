@@ -21,7 +21,7 @@
 <!-- Inline SVG favicon: no extra file, no 404 -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 36'><rect x='-4' y='-10' width='64' height='56' rx='8' fill='%230b0b0c'/><path d='M5 5 L16 31 L27 5' fill='none' stroke='%23ffffff' stroke-width='5.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M34 31 L34 5 L43 5 A8 8 0 0 1 43 21 L34 21' fill='none' stroke='%23ffffff' stroke-width='5.5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=4">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}.slide{flex:0 0 100%}.carousel-controls{display:none}</style></noscript>
 </head>
 <body>
@@ -90,46 +90,62 @@
       </div>
 
       <div class="hero-visual reveal" data-delay="2">
-        <svg class="printer" viewBox="0 0 420 412" role="img" aria-labelledby="pr-title">
+        <svg class="printer" id="printer" viewBox="0 0 420 412" role="img" aria-labelledby="pr-title">
           <title id="pr-title">Animation of a Bambu Lab P1S printing a part</title>
 
-          <!-- AMS on top -->
           <rect class="pr-ams"  x="112" y="6"  width="196" height="52" rx="6"/>
           <circle class="pr-spool" cx="146" cy="32" r="13"/>
           <circle class="pr-spool" cx="187" cy="32" r="13"/>
           <circle class="pr-spool" cx="228" cy="32" r="13"/>
           <circle class="pr-spool" cx="269" cy="32" r="13"/>
 
-          <!-- chassis + enclosed chamber -->
           <rect class="pr-body"    x="60" y="66"  width="300" height="300" rx="10"/>
           <rect class="pr-chamber" x="76" y="82"  width="268" height="236" rx="5"/>
           <line class="pr-post"    x1="88"  y1="88" x2="88"  y2="312"/>
           <line class="pr-post"    x1="332" y1="88" x2="332" y2="312"/>
 
-          <!-- X gantry the toolhead rides on -->
           <line class="pr-rail" x1="84" y1="136" x2="336" y2="136"/>
 
-          <!-- bed + the part, descending together in Z -->
+          <!-- Bed and part descend together in Z. The part's top edge is fixed
+               at y=180 (nozzle height) and its height grows downward, so the top
+               stays at the nozzle exactly like the real machine. -->
+          <!-- Bed descends in Z. -->
           <g class="pr-bed-group">
-            <rect class="pr-object" x="178" y="68"  width="64"  height="112"/>
-            <rect class="pr-bed"    x="102" y="180" width="216" height="10" rx="2"/>
-            <rect class="pr-bed-lip" x="102" y="180" width="216" height="3" rx="1"/>
+            <animateTransform attributeName="transform" type="translate"
+              values="0 0; 0 112; 0 112; 0 0" keyTimes="0; 0.8; 0.94; 1"
+              dur="9s" repeatCount="indefinite"/>
+            <rect class="pr-bed"     x="102" y="180" width="216" height="10" rx="2"/>
+            <rect class="pr-bed-lip" x="102" y="180" width="216" height="3"  rx="1"/>
           </g>
 
-          <!-- the layer being laid down; stays level with the nozzle -->
+          <!-- The part is OUTSIDE the bed group on purpose: its top edge is
+               pinned at y=180 (nozzle height) and it grows downward by exactly
+               the distance the bed drops, so part bottom always meets bed top.
+               Nesting it in the group would apply the bed's travel twice. -->
+          <rect class="pr-object" x="178" y="180" width="64" height="0">
+            <animate attributeName="height"
+              values="0; 112; 112; 112; 0; 0" keyTimes="0; 0.8; 0.9; 0.94; 0.95; 1"
+              dur="9s" repeatCount="indefinite"/>
+            <animate attributeName="opacity"
+              values="1; 1; 1; 0; 0; 1" keyTimes="0; 0.8; 0.9; 0.94; 0.99; 1"
+              dur="9s" repeatCount="indefinite"/>
+          </rect>
+
           <line class="pr-layer" x1="178" y1="180" x2="242" y2="180"/>
 
           <g class="pr-head">
+            <animateTransform attributeName="transform" type="translate"
+              values="-30 0; 30 0; -30 0" keyTimes="0; 0.5; 1"
+              calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+              dur="3.2s" repeatCount="indefinite"/>
             <rect class="pr-head-body" x="186" y="122" width="48" height="32" rx="4"/>
             <rect class="pr-fan"       x="192" y="128" width="16" height="20" rx="2"/>
             <path class="pr-nozzle"    d="M204 154 L216 154 L212 178 L208 178 Z"/>
           </g>
 
-          <!-- glass door over the chamber -->
           <rect class="pr-glass"  x="76" y="82" width="268" height="236" rx="5"/>
           <line class="pr-handle" x1="90" y1="178" x2="90" y2="212"/>
 
-          <!-- base, screen, feet -->
           <rect class="pr-base"   x="76"  y="326" width="268" height="34" rx="4"/>
           <rect class="pr-screen" x="292" y="335" width="40"  height="16" rx="2"/>
           <rect class="pr-vent"   x="92"  y="341" width="60"  height="4"  rx="2"/>

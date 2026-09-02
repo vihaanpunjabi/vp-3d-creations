@@ -728,45 +728,11 @@ button { background: none; border: 0; cursor: pointer; }
 .pr-object    { fill: var(--blue); }
 .pr-layer     { stroke: var(--blue-bright); stroke-width: 2.5; stroke-linecap: round; }
 
-/* --- motion --- */
-.pr-bed-group,
-.pr-object,
-.pr-head { transform-box: view-box; }
-
-.pr-bed-group { animation: pr-bed 9s linear infinite; }
-@keyframes pr-bed {
-  0%   { transform: translateY(0); }
-  80%  { transform: translateY(112px); }
-  92%  { transform: translateY(112px); }
-  100% { transform: translateY(0); }
-}
-
-/* grows from its own base, so the part's top edge stays at the nozzle */
-.pr-object {
-  transform-origin: 210px 180px;
-  animation: pr-grow 9s linear infinite;
-}
-@keyframes pr-grow {
-  0%   { transform: scaleY(0); opacity: 1; }
-  80%  { transform: scaleY(1); opacity: 1; }
-  88%  { transform: scaleY(1); opacity: 1; }
-  92%  { transform: scaleY(1); opacity: 0; }
-  100% { transform: scaleY(0); opacity: 0; }
-}
-
-.pr-head { animation: pr-sweep 1.6s ease-in-out infinite alternate; }
-@keyframes pr-sweep {
-  from { transform: translateX(-30px); }
-  to   { transform: translateX(30px); }
-}
-
-/* The global reduced-motion rule freezes animations at their start frame,
-   which would leave the printer empty. Show a finished part instead. */
-@media (prefers-reduced-motion: reduce) {
-  .pr-bed-group { transform: translateY(112px); animation: none; }
-  .pr-object    { transform: scaleY(1); opacity: 1; animation: none; }
-  .pr-head      { transform: none; animation: none; }
-}
+/* --- motion ---
+   Driven by SMIL inside the SVG (see index.html), not CSS. SMIL animates real
+   SVG attributes, so it does not depend on transform-box / transform-origin
+   support and cannot be broken by a stale stylesheet cache.
+   Reduced motion is handled in script.js via svg.pauseAnimations().          */
 
 @media (max-width: 980px) {
   .hero-layout { grid-template-columns: 1fr; gap: 2.5rem; }

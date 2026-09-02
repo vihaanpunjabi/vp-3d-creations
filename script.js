@@ -372,6 +372,17 @@
   /* ---------------------------------------------------------------
      11. MISC
      --------------------------------------------------------------- */
+  /* ---------------------------------------------------------------
+     12. PRINTER — honour reduced motion
+     The P1S animation is SMIL, which CSS media queries cannot pause.
+     Park it on a finished part instead of leaving it running.
+     --------------------------------------------------------------- */
+  var printer = document.getElementById('printer');
+  if (printer && reduceMotion && typeof printer.pauseAnimations === 'function') {
+    printer.setCurrentTime(7.2);
+    printer.pauseAnimations();
+  }
+
   $('#year').textContent = new Date().getFullYear();
 
   window.addEventListener('scroll', onScroll, { passive: true });
