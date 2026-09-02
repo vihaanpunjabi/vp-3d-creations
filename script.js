@@ -98,47 +98,6 @@
   }
 
   /* ---------------------------------------------------------------
-     5. STAT COUNTERS
-     --------------------------------------------------------------- */
-  function animateCount(el) {
-    var target = parseFloat(el.dataset.count);
-    var decimals = parseInt(el.dataset.decimals || '0', 10);
-
-    if (reduceMotion) {
-      el.textContent = target.toFixed(decimals);
-      return;
-    }
-
-    var duration = 1400;
-    var start = null;
-
-    function step(ts) {
-      if (start === null) start = ts;
-      var p = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3);           // easeOutCubic
-      el.textContent = (target * eased).toFixed(decimals);
-      if (p < 1) requestAnimationFrame(step);
-      else el.textContent = target.toFixed(decimals);
-    }
-    requestAnimationFrame(step);
-  }
-
-  var counters = $$('.count');
-  if ('IntersectionObserver' in window) {
-    var countObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          countObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.6 });
-    counters.forEach(function (el) { countObserver.observe(el); });
-  } else {
-    counters.forEach(animateCount);
-  }
-
-  /* ---------------------------------------------------------------
      6. PORTFOLIO — filtering
      --------------------------------------------------------------- */
   var filters = $$('.filter');
