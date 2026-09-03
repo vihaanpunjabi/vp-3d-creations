@@ -70,31 +70,47 @@ sed -i '' 's/INSERT_YOUR_EMAIL_HERE/you@yourdomain.com/g' index.html
 
 ---
 
-## Custom domain — vp3dcreations.com
+## Domain — free options first
 
-**`vp3dcreations.com` was available when checked** (verified against the
-Verisign .com registry, not a reseller's search page). Roughly $11-12/yr.
+### Free forever, zero effort (recommended to start)
+`vp3dcreations.netlify.app` — confirmed unclaimed. Set it in Netlify under
+Site configuration -> Change site name. No cost, no expiry, no card, HTTPS
+included. The only downside is "netlify.app" in the name.
 
-Buy it at **Cloudflare Registrar** — they sell at wholesale cost with no
-markup and no renewal price hikes. Namecheap is a fine second choice.
-Avoid GoDaddy: cheap first year, steep renewals.
+`vp3dcreations.github.io` is also unclaimed if you go the GitHub Pages
+route (name the repo exactly `vp3dcreations.github.io`).
 
-Also free if you want a backup: `vp3dcreation.com` (singular),
-`vp3dcreations.net`, `vpcreations3d.com`.
+### Free real domain for one year — if you are a student
+The **GitHub Student Developer Pack** (education.github.com/pack) includes a
+free domain for a year. Historically: a `.me` from Namecheap and a `.tech`.
+Needs student verification with a school email or ID.
 
-### Pointing it at the site
+`vp3dcreations.me` was available when checked.
 
-**Netlify:** Site settings → Domain management → Add custom domain → enter
-`vp3dcreations.com`. It will either configure DNS for you (if you moved the
-nameservers to Netlify) or show you the exact records to add at your
-registrar. HTTPS is issued automatically within a few minutes.
+Note this renews at normal price after year one (~$20/yr for `.me`), so it
+is free to start, not free forever. Offers in the pack change, so check the
+current list.
 
-**GitHub Pages:** add a file named `CNAME` containing just
-`vp3dcreations.com`, commit it, then at your registrar add:
-- an `ALIAS`/`ANAME`/flattened-CNAME on the root pointing to `USERNAME.github.io`
-- a `CNAME` on `www` pointing to `USERNAME.github.io`
+### Free forever real domain, but clunky
+`nic.eu.org` grants permanent free subdomains like `vp3dcreations.eu.org`.
+Genuinely free with no renewal, but approval is manual and can take weeks.
 
-DNS changes usually take minutes, but can take up to a few hours.
+### Do not use
+Freenom (`.tk`, `.ml`, `.ga`, `.cf`) is the old "free domain" answer. It
+stopped new registrations and is effectively defunct. Do not build a
+business address on it.
+
+### Paid, if you want the .com
+`vp3dcreations.com` was available, roughly $11-12/yr at **Cloudflare
+Registrar** (wholesale cost, no markup, no renewal hikes). Avoid GoDaddy.
+
+### Pointing any custom domain at the site
+**Netlify:** Domain management -> Add a domain -> enter it -> add the DNS
+records Netlify shows you, at your registrar. HTTPS is automatic.
+
+**GitHub Pages:** add a `CNAME` file containing just the domain, then at the
+registrar add an ALIAS/ANAME on the root pointing to `USERNAME.github.io`
+and a CNAME on `www` pointing to the same.
 
 ## What stays free
 
@@ -104,4 +120,5 @@ DNS changes usually take minutes, but can take up to a few hours.
 | HTTPS certificate | $0 |
 | Contact form (Web3Forms, 250 submissions/mo) | $0 |
 | `.netlify.app` / `.github.io` subdomain | $0 |
-| Custom domain | ~$12/yr, optional |
+| `vp3dcreations.netlify.app` subdomain | $0 forever |
+| Custom `.com` | ~$12/yr, entirely optional |
