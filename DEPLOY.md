@@ -1,4 +1,4 @@
-# Deploying VP 3D Printing — free, no card required
+# Deploying VP 3D Creations — free, no card required
 
 The site is static: HTML, CSS, JS and images. No server, no build step,
 no database. That is why hosting it costs nothing.
@@ -8,11 +8,11 @@ no database. That is why hosting it costs nothing.
 ## Fastest route — Netlify Drop (about 60 seconds)
 
 1. Open <https://app.netlify.com/drop>
-2. Drag **`vp-3d-printing-site.zip`** onto the page (or drag the
+2. Drag **`vp-3d-creations-site.zip`** onto the page (or drag the
    `print-lab-site` folder itself).
 3. It goes live at something like `random-words-123.netlify.app`.
 4. Create a free account when prompted, or the site expires in an hour.
-5. **Site settings → Change site name** to get `vp3dprinting.netlify.app`.
+5. **Site settings → Change site name** to get `vp3dcreations.netlify.app`.
 
 Free tier: 100 GB bandwidth/month. This site is 1.5 MB, so that is roughly
 65,000 visits a month. HTTPS is automatic.
@@ -27,16 +27,16 @@ automatic deploys on every push.
 The repo is already initialised and committed.
 
 ```bash
-gh repo create vp-3d-printing --public --source=. --push
+gh repo create vp-3d-creations --public --source=. --push
 ```
 
 ```bash
-gh api -X POST repos/:owner/vp-3d-printing/pages -f "source[branch]=main" -f "source[path]=/"
+gh api -X POST repos/:owner/vp-3d-creations/pages -f "source[branch]=main" -f "source[path]=/"
 ```
 
 Needs the GitHub CLI first: `brew install gh && gh auth login`.
 
-Lands at `https://USERNAME.github.io/vp-3d-printing/`. Note the site is
+Lands at `https://USERNAME.github.io/vp-3d-creations/`. Note the site is
 served from a **subfolder** there — every path in this project is relative,
 so that works, but it is why you should not introduce paths starting with `/`.
 
@@ -58,7 +58,7 @@ Three tags contain `REPLACE_WITH_ABSOLUTE_URL`. iMessage, Slack and Discord
 ignore relative URLs, so shared links show no image until you run:
 
 ```bash
-sed -i '' 's|REPLACE_WITH_ABSOLUTE_URL|https://vp3dprinting.netlify.app|g' index.html
+sed -i '' 's|REPLACE_WITH_ABSOLUTE_URL|https://vp3dcreations.netlify.app|g' index.html
 ```
 
 ### 3. Show your email on the page
@@ -70,31 +70,31 @@ sed -i '' 's/INSERT_YOUR_EMAIL_HERE/you@yourdomain.com/g' index.html
 
 ---
 
-## Custom domain (optional, ~$12/yr — the only thing that costs money)
+## Custom domain — vp3dcreations.com
 
-`vp3dprinting.com` is taken. These were free when checked:
+**`vp3dcreations.com` was available when checked** (verified against the
+Verisign .com registry, not a reseller's search page). Roughly $11-12/yr.
 
-| Domain | Note |
-|---|---|
-| **vp3dprints.com** | Closest to the brand |
-| vp3dlab.com | Shorter, workshop feel |
-| vp3dstudio.com | Studio framing |
-| vp3dworks.com | |
-| vp3dprintco.com | |
-| printvp.com | Shortest |
-| vpprintlab.com | |
-| vp3dprinting.net | Exact name, .net |
+Buy it at **Cloudflare Registrar** — they sell at wholesale cost with no
+markup and no renewal price hikes. Namecheap is a fine second choice.
+Avoid GoDaddy: cheap first year, steep renewals.
 
-Buy at Cloudflare Registrar (at-cost, no markup) or Namecheap. Then:
+Also free if you want a backup: `vp3dcreation.com` (singular),
+`vp3dcreations.net`, `vpcreations3d.com`.
 
-- **Netlify:** Site settings → Domain management → Add custom domain, follow
-  its DNS instructions.
-- **GitHub Pages:** add a `CNAME` file containing your domain, then point an
-  ALIAS/ANAME record at `USERNAME.github.io`.
+### Pointing it at the site
 
-HTTPS is issued automatically either way.
+**Netlify:** Site settings → Domain management → Add custom domain → enter
+`vp3dcreations.com`. It will either configure DNS for you (if you moved the
+nameservers to Netlify) or show you the exact records to add at your
+registrar. HTTPS is issued automatically within a few minutes.
 
----
+**GitHub Pages:** add a file named `CNAME` containing just
+`vp3dcreations.com`, commit it, then at your registrar add:
+- an `ALIAS`/`ANAME`/flattened-CNAME on the root pointing to `USERNAME.github.io`
+- a `CNAME` on `www` pointing to `USERNAME.github.io`
+
+DNS changes usually take minutes, but can take up to a few hours.
 
 ## What stays free
 
