@@ -24,10 +24,10 @@ window.CATALOG = {
     title: 'Album Covers & Art',
     blurb: 'Every album cover and art piece I have printed.',
     items: [
-      { img: 'assets/img/gallery/art-01.svg', name: 'Album print 01', price: '$XX.XX', desc: 'NA' },
-      { img: 'assets/img/gallery/art-02.svg', name: 'Album print 02', price: '$XX.XX', desc: 'NA' },
-      { img: 'assets/img/gallery/art-03.svg', name: 'Album print 03', price: '$XX.XX', desc: 'NA' },
-      { img: 'assets/img/gallery/art-04.svg', name: 'Album print 04', price: '$XX.XX', desc: 'NA' }
+      { img: 'assets/img/gallery/album-04.jpg', name: 'Don Toliver — Life of a DON', price: '$XX.XX', desc: 'NA' },
+      { img: 'assets/img/gallery/album-03.jpg', name: 'I AM MUSIC', price: '$XX.XX', desc: 'NA' },
+      { img: 'assets/img/gallery/album-02.jpg', name: 'Album print on the plate', price: '$XX.XX', desc: 'NA' },
+      { img: 'assets/img/gallery/album-01.jpg', name: 'Five-print wall set', price: '$XX.XX', desc: 'NA' }
     ]
   },
 
