@@ -744,3 +744,97 @@ button { background: none; border: 0; cursor: pointer; }
   .printer { max-width: 240px; }
   .hero-stats { margin-top: 2.5rem; }
 }
+
+/* =========================================================================
+   15. SPECIALTY GALLERIES
+   ========================================================================= */
+.card-open {
+  display: block; width: 100%; padding: 0;
+  border: 0; text-align: left; cursor: pointer;
+}
+.card-open .card-media { transition: opacity .2s var(--ease); }
+.card-open:hover .card-media { opacity: .82; }
+
+.gallery-link {
+  align-self: flex-start;
+  margin: -.35rem 0 1.25rem;
+  padding: 0;
+  font-family: var(--font);
+  font-size: .95rem;
+  color: var(--blue);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s var(--ease);
+}
+.gallery-link:hover { border-bottom-color: var(--blue); }
+.gallery-count { color: var(--text-faint); }
+
+.gmodal { position: fixed; inset: 0; z-index: 210; display: grid; place-items: center; padding: var(--gutter); }
+.gmodal[hidden] { display: none; }
+.gmodal-backdrop { position: absolute; inset: 0; background: rgba(3, 5, 10, .92); }
+
+.gmodal-panel {
+  position: relative; z-index: 1;
+  width: min(1040px, 100%);
+  max-height: 88vh; overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line-mid);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 3.5vw, 2.25rem);
+}
+
+.gmodal-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1.5rem; margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem; border-bottom: 1px solid var(--line);
+}
+.gmodal-eyebrow {
+  font-size: .74rem; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--text-faint); margin-bottom: .5rem;
+}
+.gmodal-title { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 700; letter-spacing: -.01em; }
+.gmodal-blurb { color: var(--text-dim); font-size: .95rem; margin-top: .4rem; }
+
+.gmodal-close {
+  flex: none; width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--line-mid); color: var(--text);
+  display: grid; place-items: center;
+  transition: border-color .2s var(--ease);
+}
+.gmodal-close svg { width: 18px; height: 18px; }
+.gmodal-close:hover { border-color: var(--blue); }
+
+.gmodal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.gm-item {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-alt);
+  transition: border-color .2s var(--ease);
+}
+.gm-item:hover { border-color: var(--line-strong); }
+.gm-item img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+.gm-item figcaption { padding: .9rem 1rem 1.1rem; }
+
+.gm-item-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: .75rem; margin-bottom: .35rem;
+}
+.gm-item-head h3 { font-size: 1.02rem; font-weight: 600; letter-spacing: -.005em; }
+.gm-price { flex: none; font-size: 1rem; font-weight: 700; color: var(--blue); }
+.gm-desc { font-size: .87rem; color: var(--text-dim); line-height: 1.5; }
+
+.gmodal-empty { color: var(--text-dim); font-size: .95rem; padding: 2rem 0; text-align: center; }
+
+@media (max-width: 560px) {
+  .gmodal-panel { max-height: 92vh; }
+  .gmodal-grid { grid-template-columns: 1fr; }
+}

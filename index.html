@@ -182,11 +182,13 @@
 
       <!-- Service 1 -->
       <article class="card service-card reveal" data-delay="1">
-        <div class="card-media">
+        <button class="card-open" data-gallery="art" aria-label="Open the gallery">
+          <div class="card-media">
           <!-- REPLACE: assets/img/service-art.jpg -->
           <img src="assets/img/service-art.svg" alt="Multi-color 3D printed album cover artwork" loading="lazy">
           <span class="card-tag">Art</span>
         </div>
+        </button>
         <div class="card-body">
           <h3 class="card-title">Album Covers &amp; Art</h3>
           <ul class="feature-list">
@@ -194,6 +196,9 @@
             <li>Texture &amp; relief mapping from any image</li>
             <li>Frame-ready sizes up to 250&nbsp;mm</li>
           </ul>
+          <button class="gallery-link" data-gallery="art">
+            View gallery <span class="gallery-count"></span>
+          </button>
           <div class="card-foot">
             <p class="price"><span class="price-label">Starting at</span><span class="price-value">$XX.XX</span></p>
             <button class="btn btn-outline btn-sm js-request" data-service="art">Request this</button>
@@ -203,11 +208,13 @@
 
       <!-- Service 2 -->
       <article class="card service-card is-featured reveal" data-delay="2">
-        <div class="card-media">
+        <button class="card-open" data-gallery="robotics" aria-label="Open the gallery">
+          <div class="card-media">
           <!-- REPLACE: assets/img/service-robotics.jpg -->
           <img src="assets/img/service-robotics.svg" alt="Precision 3D printed robotics bracket and chassis components" loading="lazy">
           <span class="card-tag">Most requested</span>
         </div>
+        </button>
         <div class="card-body">
           <h3 class="card-title">Robotics &amp; Engineering</h3>
           <ul class="feature-list">
@@ -215,6 +222,9 @@
             <li>PETG / ASA / CF-Nylon for load-bearing parts</li>
             <li>Same-week rapid prototyping revisions</li>
           </ul>
+          <button class="gallery-link" data-gallery="robotics">
+            View gallery <span class="gallery-count"></span>
+          </button>
           <div class="card-foot">
             <p class="price"><span class="price-label">Starting at</span><span class="price-value">$XX.XX</span></p>
             <button class="btn btn-outline btn-sm js-request" data-service="robotics">Request this</button>
@@ -531,6 +541,25 @@
   </div>
 </footer>
 
+<!-- ============ SPECIALTY GALLERY ============ -->
+<div class="gmodal" id="gmodal" role="dialog" aria-modal="true" aria-labelledby="gm-title" hidden>
+  <div class="gmodal-backdrop" data-gclose></div>
+  <div class="gmodal-panel" role="document">
+    <header class="gmodal-head">
+      <div>
+        <p class="gmodal-eyebrow">Gallery</p>
+        <h2 class="gmodal-title" id="gm-title"></h2>
+        <p class="gmodal-blurb" id="gm-blurb"></p>
+      </div>
+      <button class="gmodal-close" id="gm-close" aria-label="Close gallery">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </header>
+    <div class="gmodal-grid" id="gm-grid"></div>
+    <p class="gmodal-empty" id="gm-empty" hidden>Photos going up soon.</p>
+  </div>
+</div>
+
 <!-- ============ LIGHTBOX ============ -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
   <div class="lightbox-backdrop" data-close></div>
@@ -548,6 +577,7 @@
   </div>
 </div>
 
+<script src="catalog.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

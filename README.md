@@ -64,6 +64,21 @@ sed -i '' 's/INSERT_YOUR_EMAIL_HERE/you@yourdomain.com/g' index.html
 | Brand name "PRINTLAB" | `index.html` → `.brand-text` + `<title>` |
 | Colors | `styles.css` → `:root` (`--blue`, `--orange`) |
 
+### Gallery prints (the pop-up on each specialty)
+
+`catalog.js` holds them — it is the only file you edit to add a print:
+
+```js
+{ img: 'assets/img/gallery/art-05.jpg',
+  name: 'Dark Side of the Moon',
+  price: '$45.00',
+  desc:  'Four-colour relief, 220 mm.' },
+```
+
+Drop the photo in `assets/img/gallery/`, add the block, save. The grid
+resizes itself and the "View gallery (N)" count updates automatically.
+Roughly 4:3 photos look best. An empty list shows "Photos going up soon."
+
 ### Images
 
 Drop your photos into `assets/img/` and change the `src`. Recommended sizes:

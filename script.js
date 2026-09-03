@@ -369,7 +369,123 @@
   });
 
   /* ---------------------------------------------------------------
-     11. MISC
+     11. SPECIALTY GALLERIES
+     Contents come from catalog.js. Text is written with textContent
+     rather than innerHTML so an apostrophe or angle bracket in a
+     description can never break the markup.
+     --------------------------------------------------------------- */
+  var CATALOG = window.CATALOG || {};
+
+  var gmodal   = $('#gmodal');
+  var gmTitle  = $('#gm-title');
+  var gmBlurb  = $('#gm-blurb');
+  var gmGrid   = $('#gm-grid');
+  var gmEmpty  = $('#gm-empty');
+  var gmClose  = $('#gm-close');
+  var gmLastFocused = null;
+
+  function buildItem(item) {
+    var fig = document.createElement('figure');
+    fig.className = 'gm-item';
+
+    if (item.img) {
+      var img = document.createElement('img');
+      img.src = item.img;
+      img.alt = item.name || 'Printed piece';
+      img.loading = 'lazy';
+      fig.appendChild(img);
+    }
+
+    var cap = document.createElement('figcaption');
+
+    var head = document.createElement('div');
+    head.className = 'gm-item-head';
+
+    var name = document.createElement('h3');
+    name.textContent = item.name || 'Untitled';
+    head.appendChild(name);
+
+    if (item.price) {
+      var price = document.createElement('span');
+      price.className = 'gm-price';
+      price.textContent = item.price;
+      head.appendChild(price);
+    }
+    cap.appendChild(head);
+
+    if (item.desc) {
+      var desc = document.createElement('p');
+      desc.className = 'gm-desc';
+      desc.textContent = item.desc;
+      cap.appendChild(desc);
+    }
+
+    fig.appendChild(cap);
+    return fig;
+  }
+
+  function openGallery(key) {
+    var data = CATALOG[key];
+    if (!data) return;
+
+    gmLastFocused = document.activeElement;
+
+    gmTitle.textContent = data.title || '';
+    gmBlurb.textContent = data.blurb || '';
+
+    gmGrid.innerHTML = '';
+    var items = data.items || [];
+    items.forEach(function (item) { gmGrid.appendChild(buildItem(item)); });
+
+    gmEmpty.hidden = items.length > 0;
+    gmGrid.hidden = items.length === 0;
+
+    gmodal.hidden = false;
+    document.body.classList.add('no-scroll');
+    gmClose.focus();
+  }
+
+  function closeGallery() {
+    gmodal.hidden = true;
+    document.body.classList.remove('no-scroll');
+    if (gmLastFocused) gmLastFocused.focus();
+  }
+
+  $$('[data-gallery]').forEach(function (btn) {
+    btn.addEventListener('click', function () { openGallery(btn.dataset.gallery); });
+  });
+
+  gmClose.addEventListener('click', closeGallery);
+  gmodal.addEventListener('click', function (e) {
+    if (e.target.closest('[data-gclose]')) closeGallery();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (gmodal.hidden) return;
+
+    if (e.key === 'Escape') { closeGallery(); return; }
+
+    if (e.key === 'Tab') {
+      var focusable = $$('button, a[href], input, textarea, select', gmodal)
+        .filter(function (el) { return el.offsetParent !== null; });
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  // Show how many pieces are in each gallery, straight from the catalog
+  $$('.gallery-link').forEach(function (link) {
+    var data = CATALOG[link.dataset.gallery];
+    var count = data && data.items ? data.items.length : 0;
+    var span = $('.gallery-count', link);
+    if (span) span.textContent = '(' + count + ')';
+  });
+
+  /* ---------------------------------------------------------------
+     12. MISC
      --------------------------------------------------------------- */
   /* ---------------------------------------------------------------
      12. PRINTER — honour reduced motion
