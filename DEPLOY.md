@@ -1,44 +1,26 @@
-# Deploying VP 3D Creations — free, no card required
+# Deploying VP 3D Creations
 
-The site is static: HTML, CSS, JS and images. No server, no build step,
-no database. That is why hosting it costs nothing.
+**The site is LIVE on GitHub Pages:**
+<https://vihaanpunjabi.github.io/vp-3d-creations/>
 
----
+Repo: <https://github.com/vihaanpunjabi/vp-3d-creations>
 
-## Fastest route — Netlify Drop (about 60 seconds)
-
-1. Open <https://app.netlify.com/drop>
-2. Drag **`vp-3d-creations-site.zip`** onto the page (or drag the
-   `print-lab-site` folder itself).
-3. It goes live at something like `random-words-123.netlify.app`.
-4. Create a free account when prompted, or the site expires in an hour.
-5. **Site settings → Change site name** to get `vp3dcreations.netlify.app`.
-
-Free tier: 100 GB bandwidth/month. This site is 1.5 MB, so that is roughly
-65,000 visits a month. HTTPS is automatic.
-
-To update later: drag the folder again, or connect the GitHub repo for
-automatic deploys on every push.
-
----
-
-## Alternative — GitHub Pages (ties deploys to git)
-
-The repo is already initialised and committed.
+Every `git push` to `main` redeploys automatically — usually live within
+about a minute. No build step, no server, no database. Hosting is $0.
 
 ```bash
-gh repo create vp-3d-creations --public --source=. --push
+git add -A && git commit -m "your message" && git push
 ```
 
-```bash
-gh api -X POST repos/:owner/vp-3d-creations/pages -f "source[branch]=main" -f "source[path]=/"
-```
+## Still to do (needs your input)
 
-Needs the GitHub CLI first: `brew install gh && gh auth login`.
+1. **Contact form** — `index.html` has `YOUR_WEB3FORMS_ACCESS_KEY`.
+   Get a free key at <https://web3forms.com> and replace it, or the form
+   submits nowhere. Your email stays off the public page.
+2. **Visible email** — one `INSERT_YOUR_EMAIL_HERE` and one placeholder
+   `you@domain.com` remain, if you want the address shown on the page.
 
-Lands at `https://USERNAME.github.io/vp-3d-creations/`. Note the site is
-served from a **subfolder** there — every path in this project is relative,
-so that works, but it is why you should not introduce paths starting with `/`.
+Link-preview (`og:`) tags are already pointed at the live URL.
 
 ---
 
@@ -53,13 +35,10 @@ Without this, submissions go nowhere.
 Your email never appears in the public HTML — it lives on Web3Forms' side,
 tied to the key, so scrapers cannot harvest it.
 
-### 2. Fix the link previews
-Three tags contain `REPLACE_WITH_ABSOLUTE_URL`. iMessage, Slack and Discord
-ignore relative URLs, so shared links show no image until you run:
-
-```bash
-sed -i '' 's|REPLACE_WITH_ABSOLUTE_URL|https://vp3dcreations.netlify.app|g' index.html
-```
+### 2. Fix the link previews — DONE
+The `og:image` and `og:url` tags now point at
+`https://vihaanpunjabi.github.io/vp-3d-creations`. If you later move to a
+custom domain, update those two tags in `index.html`.
 
 ### 3. Show your email on the page
 Two `INSERT_YOUR_EMAIL_HERE` placeholders, if you want it visible:
