@@ -846,3 +846,31 @@ button { background: none; border: 0; cursor: pointer; }
   border-bottom: 1px solid var(--line);
 }
 .quote-photo .quote-foot { padding: 1.1rem clamp(1.25rem, 3vw, 1.75rem) 1.25rem; }
+
+/* =========================================================================
+   16. SINGLE OFFERING
+   One service left, so the card runs wide: photo on the left, detail on the
+   right. A lone card sitting in a multi-column grid reads like a mistake.
+   ========================================================================= */
+.service-grid.is-single { grid-template-columns: 1fr; }
+
+.is-single .service-card { flex-direction: row; align-items: stretch; }
+.is-single .card-open { width: 46%; flex: none; display: flex; }
+.is-single .card-media {
+  /* a definite ratio, or the portrait photo drives a ~700px-tall card */
+  aspect-ratio: 5 / 4;
+  height: 100%;
+  border-bottom: 0;
+  border-right: 1px solid var(--line);
+  width: 100%;
+}
+.is-single .card-body { padding: clamp(1.5rem, 3vw, 2.25rem); justify-content: center; }
+.is-single .card-foot { margin-top: 1.5rem; }
+.is-single .card-title { font-size: clamp(1.35rem, 2.6vw, 1.75rem); }
+.is-single .feature-list { margin-bottom: 1.75rem; }
+
+@media (max-width: 760px) {
+  .is-single .service-card { flex-direction: column; }
+  .is-single .card-open { width: 100%; }
+  .is-single .card-media { aspect-ratio: 4 / 3; border-right: 0; border-bottom: 1px solid var(--line); }
+}

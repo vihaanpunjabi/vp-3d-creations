@@ -272,8 +272,7 @@
      9. SERVICE CARD → prefill the contact form
      --------------------------------------------------------------- */
   var SERVICE_MAP = {
-    art:      'Album Covers & Art',
-    robotics: 'Robotics & Engineering'
+    art: 'Album cover'
   };
 
   $$('.js-request').forEach(function (btn) {

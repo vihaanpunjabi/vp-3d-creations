@@ -21,24 +21,13 @@
 window.CATALOG = {
 
   art: {
-    title: 'Album Covers & Art',
-    blurb: 'Every album cover and art piece I have printed.',
+    title: 'Album covers',
+    blurb: 'Every album cover I have printed.',
     items: [
       { img: 'assets/img/gallery/album-04.jpg', name: 'Don Toliver — Life of a DON', price: '$XX.XX', desc: 'NA' },
       { img: 'assets/img/gallery/album-03.jpg', name: 'I AM MUSIC', price: '$XX.XX', desc: 'NA' },
       { img: 'assets/img/gallery/album-02.jpg', name: 'Album print on the plate', price: '$XX.XX', desc: 'NA' },
       { img: 'assets/img/gallery/album-01.jpg', name: 'Five-print wall set', price: '$XX.XX', desc: 'NA' }
-    ]
-  },
-
-  robotics: {
-    title: 'Robotics & Engineering',
-    blurb: 'Every robotics and engineering part I have printed.',
-    items: [
-      { img: 'assets/img/gallery/robotics-01.svg', name: 'Robotics part 01', price: '$XX.XX', desc: 'NA' },
-      { img: 'assets/img/gallery/robotics-02.svg', name: 'Robotics part 02', price: '$XX.XX', desc: 'NA' },
-      { img: 'assets/img/gallery/robotics-03.svg', name: 'Robotics part 03', price: '$XX.XX', desc: 'NA' },
-      { img: 'assets/img/gallery/robotics-04.svg', name: 'Robotics part 04', price: '$XX.XX', desc: 'NA' }
     ]
   }
 
