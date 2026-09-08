@@ -268,32 +268,6 @@ button { background: none; border: 0; cursor: pointer; }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 3.5rem; }
 
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2rem;
-  max-width: 640px;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--line-mid);
-}
-.stat { display: flex; flex-direction: column; }
-.stat dt {
-  margin-top: auto;
-  order: -1;
-  min-height: 2.2em;
-  font-size: .72rem;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: .3rem;
-}
-.stat dd {
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -.02em;
-  color: var(--text);
-}
-.stat .unit { color: var(--text-faint); font-size: .68em; font-weight: 400; margin-left: .15em; }
 
 /* ---------- 6. SERVICES ---------- */
 .service-grid {
@@ -665,8 +639,7 @@ button { background: none; border: 0; cursor: pointer; }
 
   .hero { min-height: auto; padding-top: calc(var(--header-h) + 3.5rem); }
   .hero-scrim { background: linear-gradient(180deg, rgba(11,11,12,.86) 0%, rgba(11,11,12,.9) 100%); }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .hero-actions .btn { flex: 1 1 100%; }
+    .hero-actions .btn { flex: 1 1 100%; }
 
   .field-row { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -701,7 +674,6 @@ button { background: none; border: 0; cursor: pointer; }
 .hero-copy .hero-actions { margin-bottom: 0; }
 .hero-visual { min-width: 0; display: flex; justify-content: center; }
 .printer { width: 100%; max-width: 420px; height: auto; display: block; }
-.hero-stats { margin-top: 3.25rem; }
 
 /* --- static parts --- */
 .pr-body      { fill: #08090d; stroke: var(--line-mid);    stroke-width: 2; }
@@ -739,8 +711,7 @@ button { background: none; border: 0; cursor: pointer; }
 
 @media (max-width: 560px) {
   .printer { max-width: 240px; }
-  .hero-stats { margin-top: 2.5rem; }
-}
+  }
 
 /* =========================================================================
    15. SPECIALTY GALLERIES
